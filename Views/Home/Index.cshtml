@@ -1,0 +1,21 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<div class="container mt-4">
+    <h2>Home</h2>
+    <hr />
+
+    @if (User.Identity.IsAuthenticated)
+    {
+        <div class="alert alert-info">
+            <strong>@User.Identity.Name</strong>
+        </div>
+        <a href="/Account/Logout" class="btn btn-danger">Çıkış Yap</a>
+    }
+    else
+    {
+        <a href="/Account/Login" class="btn btn-success">Giriş Yap</a>
+        <a href="/Account/Register" class="btn btn-success">Kaydol</a>
+    }
+</div>
